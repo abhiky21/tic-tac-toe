@@ -58,7 +58,7 @@ function App() {
   return (
     <div className="flex justify-center items-center min-h-screen bg-[#0B1120]">
       <div className="relative bg-[#1E293B] rounded-xl p-4">
-        <h1 className="font-bold text-black text-center">Tic-Tac-Toe</h1>
+        <h1 className="font-bold text-white text-center">Tic-Tac-Toe</h1>
 
         <div className="flex justify-between mb-4 ">
           <div
