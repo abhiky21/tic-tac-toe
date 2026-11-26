@@ -58,7 +58,7 @@ function App() {
   return (
     <div className="flex justify-center items-center min-h-screen bg-[#0B1120]">
       <div className="relative bg-[#1E293B] rounded-xl p-4">
-        <h1 className="font-bold text-white text-center">Tic-Tac-Toe</h1>
+        <h1 className="font-bold !text-white text-center">Tic-Tac-Toe</h1>
 
         <div className="flex justify-between mb-4 ">
           <div
@@ -88,9 +88,9 @@ function App() {
         {winner !== "" && (
           <div className="absolute inset-0">
             <div className="bg-black/70 p-8 flex flex-col justify-center items-center rounded-xl text-center shadow-lg w-full h-full ">
-              <h1 className="text-3xl font-bold text-white">Game Over</h1>
+              <h1 className="text-3xl font-bold !text-white">Game Over</h1>
 
-              <h2 className="text-2xl font-semibold text-green-600 mt-2">
+              <h2 className="text-2xl font-semibold !text-green-600 mt-2">
                 {winner === "X" ? "Player 1" : "Player 2"} won!
               </h2>
 
