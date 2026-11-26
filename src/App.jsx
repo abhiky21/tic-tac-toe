@@ -86,7 +86,7 @@ function App() {
             X
           </div>
           <div
-            className={` text-amber-400 py-2 px-6 md:px-10 rounded-lg border border-amber-400 ${currentPlayer === "O" ? "text-cyan-400 border-cyan-400" : ""}`}
+            className={` text-amber-400 py-2 md:px-10 rounded-lg border border-amber-400 ${currentPlayer === "O" ? "text-cyan-400 border-cyan-400" : ""}`}
           >
             <input
               type="text"
@@ -104,7 +104,7 @@ function App() {
             <button
               key={index}
               onClick={() => handleClick(index)}
-              className="w-20 md:w-35 h-20 md:h-35 bg-[#334155] rounded-lg text-4xl md:text-8xl font-bold text-gray-200"
+              className="w-25 md:w-35 h-20 md:h-35 bg-[#334155] rounded-lg text-4xl md:text-8xl font-bold text-gray-200"
             >
               {value}
             </button>
