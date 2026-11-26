@@ -78,7 +78,7 @@ function App() {
             <button
               key={index}
               onClick={() => handleClick(index)}
-              className="w-40 h-40 bg-gray-200 rounded-lg text-3xl font-bold text-gray-600"
+              className="w-20 md:w-40 h-20 md:h-40 bg-gray-200 rounded-lg text-4xl md:text-8xl font-bold text-gray-600"
             >
               {value}
             </button>
