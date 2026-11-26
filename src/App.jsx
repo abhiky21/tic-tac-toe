@@ -62,12 +62,12 @@ function App() {
 
         <div className="flex justify-between mb-4 ">
           <div
-            className={` text-amber-400 py-2 px-10 rounded-lg border border-amber-400 ${currentPlayer === "X" ? "text-cyan-400 border-cyan-400" : ""}`}
+            className={` text-amber-400 py-2 px-6 md:px-10 rounded-lg border border-amber-400 ${currentPlayer === "X" ? "text-cyan-400 border-cyan-400" : ""}`}
           >
             Player1 X
           </div>
           <div
-            className={` text-amber-400 py-2 px-10 rounded-lg border border-amber-400 ${currentPlayer === "O" ? "text-cyan-400 border-cyan-400" : ""}`}
+            className={` text-amber-400 py-2 px-6 md:px-10 rounded-lg border border-amber-400 ${currentPlayer === "O" ? "text-cyan-400 border-cyan-400" : ""}`}
           >
             Player2 O
           </div>
