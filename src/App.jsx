@@ -64,13 +64,14 @@ function App() {
     <div className="flex justify-center items-center min-h-screen bg-[#0B1120]">
       <div className="relative bg-[#1E293B] rounded-xl p-4">
         <h1 className="font-bold !text-white text-center">Tic-Tac-Toe</h1>
-
-        <button
-          onClick={() => setIsEditing(!isEditing)}
-          className="absolute right-5 top-16 text-white cursor-pointer"
-        >
-          {isEditing ? "Save" : "Edit"}
-        </button>
+        <div className="flex justify-end">
+          <button
+            onClick={() => setIsEditing(!isEditing)}
+            className="text-amber-400 text-sm cursor-pointer hover:text-amber-300 transition-colors"
+          >
+            {isEditing ? "Save" : "Edit"}
+          </button>
+        </div>
 
         <div className="flex justify-between mb-4 ">
           <div
@@ -81,7 +82,7 @@ function App() {
               value={firstPlayer}
               readOnly={!isEditing}
               onChange={(e) => setfirstPlayer(e.target.value)}
-              className="w-30 outline-0"
+              className={`w-30 outline-0 pl-2 ${isEditing ? "bg-gray-700" : ""}`}
             />{" "}
             X
           </div>
@@ -93,8 +94,8 @@ function App() {
               value={secondPlayer}
               readOnly={!isEditing}
               onChange={(e) => setsecondPlayer(e.target.value)}
-              className="w-30 outline-0"
-            />
+              className={`w-30 outline-0 pl-2 ${isEditing ? "bg-gray-700" : ""}`}
+            />{" "}
             O
           </div>
         </div>
