@@ -5,6 +5,9 @@ function App() {
 
   const [currentPlayer, setCurrentPlayer] = useState("X");
   const [winner, setWinner] = useState("");
+  const [firstPlayer, setfirstPlayer] = useState("Player1");
+  const [secondPlayer, setsecondPlayer] = useState("Player2");
+  const [isEditing, setIsEditing] = useState(false);
 
   const handleClick = (index) => {
     const newValue = [...values];
@@ -62,16 +65,37 @@ function App() {
       <div className="relative bg-[#1E293B] rounded-xl p-4">
         <h1 className="font-bold !text-white text-center">Tic-Tac-Toe</h1>
 
+        <button
+          onClick={() => setIsEditing(!isEditing)}
+          className="absolute right-5 top-16 text-white cursor-pointer"
+        >
+          {isEditing ? "Save" : "Edit"}
+        </button>
+
         <div className="flex justify-between mb-4 ">
           <div
-            className={` text-amber-400 py-2 px-6 md:px-10 rounded-lg border border-amber-400 ${currentPlayer === "X" ? "text-cyan-400 border-cyan-400" : ""}`}
+            className={`text-amber-400 py-2 md:px-10 rounded-lg border border-amber-400 ${currentPlayer === "X" ? "text-cyan-400 border-cyan-400" : ""}`}
           >
-            Player1 X
+            <input
+              type="text"
+              value={firstPlayer}
+              readOnly={!isEditing}
+              onChange={(e) => setfirstPlayer(e.target.value)}
+              className="w-30 outline-0"
+            />{" "}
+            X
           </div>
           <div
             className={` text-amber-400 py-2 px-6 md:px-10 rounded-lg border border-amber-400 ${currentPlayer === "O" ? "text-cyan-400 border-cyan-400" : ""}`}
           >
-            Player2 O
+            <input
+              type="text"
+              value={secondPlayer}
+              readOnly={!isEditing}
+              onChange={(e) => setsecondPlayer(e.target.value)}
+              className="w-30 outline-0"
+            />
+            O
           </div>
         </div>
 
@@ -95,7 +119,7 @@ function App() {
               <h2 className="text-2xl font-semibold !text-green-600 mt-2">
                 {winner === "Draw"
                   ? "It's a draw!"
-                  : `${winner === "X" ? "Player 1" : "Player 2"} won!`}
+                  : `${winner === "X" ? firstPlayer : secondPlayer} won!`}
               </h2>
 
               <button
