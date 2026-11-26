@@ -46,6 +46,8 @@ function App() {
       setWinner(board[0]);
     } else if (board[2] != "" && board[2] == board[4] && board[4] == board[6]) {
       setWinner(board[2]);
+    } else if (board.every((value) => value !== "")) {
+      setWinner("Draw");
     }
   }
 
@@ -91,7 +93,9 @@ function App() {
               <h1 className="text-3xl font-bold !text-white">Game Over</h1>
 
               <h2 className="text-2xl font-semibold !text-green-600 mt-2">
-                {winner === "X" ? "Player 1" : "Player 2"} won!
+                {winner === "Draw"
+                  ? "It's a draw!"
+                  : `${winner === "X" ? "Player 1" : "Player 2"} won!`}
               </h2>
 
               <button
