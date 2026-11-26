@@ -56,18 +56,18 @@ function App() {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen">
-      <div className="relative bg-gray-400 rounded-xl p-4">
-        <h1 className="font-bold text-black">Tic-Tac-Toe</h1>
+    <div className="flex justify-center items-center min-h-screen bg-[#0B1120]">
+      <div className="relative bg-[#1E293B] rounded-xl p-4">
+        <h1 className="font-bold text-black text-center">Tic-Tac-Toe</h1>
 
         <div className="flex justify-between mb-4 ">
           <div
-            className={` text-black p-4 ${currentPlayer === "X" ? "border border-amber-400" : ""}`}
+            className={` text-amber-400 py-2 px-10 rounded-lg border border-amber-400 ${currentPlayer === "X" ? "text-cyan-400 border-cyan-400" : ""}`}
           >
             Player1 X
           </div>
           <div
-            className={` text-black p-4 ${currentPlayer === "O" ? "border border-amber-400 " : ""}`}
+            className={` text-amber-400 py-2 px-10 rounded-lg border border-amber-400 ${currentPlayer === "O" ? "text-cyan-400 border-cyan-400" : ""}`}
           >
             Player2 O
           </div>
@@ -78,7 +78,7 @@ function App() {
             <button
               key={index}
               onClick={() => handleClick(index)}
-              className="w-20 md:w-40 h-20 md:h-40 bg-gray-200 rounded-lg text-4xl md:text-8xl font-bold text-gray-600"
+              className="w-20 md:w-35 h-20 md:h-35 bg-[#334155] rounded-lg text-4xl md:text-8xl font-bold text-gray-200"
             >
               {value}
             </button>
@@ -87,11 +87,11 @@ function App() {
 
         {winner !== "" && (
           <div className="absolute inset-0">
-            <div className="bg-black/80 p-8 flex flex-col justify-center items-center rounded-xl text-center shadow-lg w-full h-full ">
-              <h1 className="text-3xl font-bold text-black">Game Over</h1>
+            <div className="bg-black/70 p-8 flex flex-col justify-center items-center rounded-xl text-center shadow-lg w-full h-full ">
+              <h1 className="text-3xl font-bold text-white">Game Over</h1>
 
               <h2 className="text-2xl font-semibold text-green-600 mt-2">
-                Player {winner === "X" ? "Player 1" : "Player 2"} won!
+                {winner === "X" ? "Player 1" : "Player 2"} won!
               </h2>
 
               <button
